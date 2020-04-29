@@ -1,0 +1,922 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.7745285212648623 -0.6225278370078102 -0.11209220266210802 0.41346293259352535
+  position 15.174677966471695 5.448455201824634 13.894824019727814
+  follow "Pioneer 3-AT"
+  followType "Mounted Shot"
+}
+Background {
+  skyColor [
+    0.15 0.45 1
+  ]
+}
+Floor {
+  size 100 30
+  appearance ChequeredParquetry {
+    textureTransform TextureTransform {
+    }
+    IBLStrength 0
+  }
+}
+Cypress {
+  translation 19.97 0 -4.86
+  name "cypress tree(4)"
+}
+StraightRoadSegment {
+  translation -50 0.01 11.5
+  rotation 0 1 0 1.57
+  name "road(2)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 20
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation 14.5 0.01 -13.02
+  rotation 0 1 0 1.57
+  name "road(16)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 20
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation -7.9 0.01 -7.5
+  rotation 0 1 0 1.57
+  name "road(18)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 20.4
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation 35.5 0.01 -12
+  name "road(14)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 4
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation 13.5 0.01 -12.03
+  name "road(20)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 3.54
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation -47 0.01 9.5
+  rotation 0 1 0 1.57
+  name "road(3)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 17
+  bottomTexture [
+    ""
+  ]
+}
+Cypress {
+  translation 17.41 0 -5.06
+  name "cypress tree(3)"
+}
+Cypress {
+  translation 15.07 0 -8.65
+  name "cypress tree(2)"
+}
+Cypress {
+  translation 19.47 0 -9.12
+  name "cypress tree(1)"
+}
+StraightRoadSegment {
+  translation -47 0.01 7.5
+  rotation 0 1 0 1.57
+  name "road(1)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 35
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation -47 0.01 5.5
+  rotation 0 1 0 1.57
+  name "road(7)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 35
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation -47 0.01 3.5
+  rotation 0 1 0 1.57
+  name "road(8)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 60
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation -19.9 0.01 -7.51
+  rotation 0 1 0 1.57
+  name "road(11)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 1 1 0
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 12
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation -31.74 0.01 -7.51
+  rotation 0 1 0 1.57
+  name "road(21)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 1 1 0
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 12
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation -18.4 0.01 -9.88
+  rotation 0 1 0 1.57
+  name "road(12)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 1 0 0
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 8.41
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation -31.74 0.01 -5.13
+  rotation 0 1 0 1.57
+  name "road(24)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 1 0 0
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 9.35
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation -31.74 0.01 -9.9
+  rotation 0 1 0 1.57
+  name "road(13)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 0 0 1
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 9.36
+  bottomTexture [
+    ""
+  ]
+}
+StraightRoadSegment {
+  translation -18.41 0.01 -5.14
+  rotation 0 1 0 1.57
+  name "road(27)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 0 0 1
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  startingRoadBorderWidth 0.2
+  endingRoadBorderWidth 0.2
+  length 8.41
+  bottomTexture [
+    ""
+  ]
+}
+TexturedBackgroundLight {
+}
+Cypress {
+  translation 21.93 0 -7.54
+}
+CurvedRoadSegment {
+  translation -30 0.01 10.5
+  rotation 0 1 0 1.5708
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 1
+  totalAngle 3.1415
+}
+CurvedRoadSegment {
+  translation -47 0.01 8.5
+  rotation 0 1 0 -1.5708
+  name "road(4)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 1
+  totalAngle 3.1415
+}
+CurvedRoadSegment {
+  translation -12 0.01 6.53
+  rotation 0 1 0 1.5708
+  name "road(5)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 1
+  totalAngle 3.1415
+}
+CurvedRoadSegment {
+  translation -10 0.01 -7.12
+  name "road(6)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 0 0 1
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 2
+  totalAngle 1.57
+}
+CurvedRoadSegment {
+  translation -22.38 0.01 -7.9
+  rotation 0 1 0 1.57
+  name "road(25)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 0 0 1
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 2
+  totalAngle 1.57
+}
+CurvedRoadSegment {
+  translation -18.4 0.01 -7.14
+  rotation 0 1 0 -1.57
+  name "road(26)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 0 0 1
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 2
+  totalAngle 1.57
+}
+CurvedRoadSegment {
+  translation -10 0.01 -7.87
+  rotation 0 1 0 1.57
+  name "road(10)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 1 0 0
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 2
+  totalAngle 1.57
+}
+CurvedRoadSegment {
+  translation -18.39 0.01 -7.88
+  rotation 0 1 0 3.14
+  name "road(22)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 1 0 0
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 2
+  totalAngle 1.57
+}
+CurvedRoadSegment {
+  translation -22.4 0.01 -7.12
+  name "road(23)"
+  width 0.75
+  lines [
+    RoadLine {
+      color 1 0 0
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 2
+  totalAngle 1.57
+}
+CurvedRoadSegment {
+  translation 34.5 0.01 -12
+  rotation 0 1 0 1.57
+  name "road(15)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 1
+  totalAngle 1.57
+}
+CurvedRoadSegment {
+  translation 14.5 0.01 -12.02
+  rotation 0 1 0 3.14
+  name "road(17)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 1
+  totalAngle 1.57
+}
+CurvedRoadSegment {
+  translation 12.5 0.01 -8.49
+  name "road(19)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 1
+  totalAngle 1.57
+}
+CurvedRoadSegment {
+  translation -47 0.01 4.5
+  rotation 0 1 0 -1.5708
+  name "road(9)"
+  width 0.75
+  lines [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0.2
+  ]
+  curvatureRadius 1
+  totalAngle 3.1415
+}
+DEF river Fluid {
+  translation 0 0.01 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+      }
+      geometry Plane {
+        size 100 2
+      }
+    }
+  ]
+}
+RoadIntersection {
+  translation -8 0.01 -7.5
+  rotation 0 1 0 -0.7854003061004253
+  roadsWidth 0.75
+  startRoadsLength [
+    0
+  ]
+  startRoadsEndLine [
+    ""
+  ]
+  startRoadsLine [
+    RoadLine {
+      color 1 1 0
+      type "continuous"
+    }
+  ]
+  startRoadBorderHeight 0
+  startRoadBorderWidth 0.2
+}
+RoadIntersection {
+  translation -20.37 0.01 -7.5
+  rotation 0 1 0 -0.7854003061004253
+  name "road intersection(1)"
+  roadsWidth 0.75
+  startRoadsLength [
+    0
+  ]
+  startRoadsEndLine [
+    ""
+  ]
+  startRoadsLine [
+    RoadLine {
+      type "continuous"
+    }
+  ]
+  startRoadBorderHeight 0
+  startRoadBorderWidth 0.2
+}
+DEF Pond Fluid {
+  translation 5 0.01 10
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+      }
+      geometry Plane {
+        size 30 10
+      }
+    }
+  ]
+}
+DEF Pond Fluid {
+  translation -19 0.01 12
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+      }
+      geometry Plane {
+        size 18 6
+      }
+    }
+  ]
+}
+DEF Pond Fluid {
+  translation -34 0.01 14
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+      }
+      geometry Plane {
+        size 12 2
+      }
+    }
+  ]
+}
+DEF Red Solid {
+  translation -31 0.03 -7.5
+  rotation 0 1 0 1.57
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+      }
+      geometry Plane {
+        size 7 0.6
+      }
+    }
+  ]
+  name "solid(1)"
+}
+DEF Green Solid {
+  translation -49 0.01999999999999999 11.5
+  rotation 0 1 0 1.57
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 1 0.5
+      }
+      geometry Plane {
+        size 2 0.4
+      }
+    }
+  ]
+  name "solid(2)"
+}
+TrafficCone {
+  translation 0 0 5
+}
+StopPanel {
+  translation 21 0.4 3.5
+  rotation 0 1 0 1.5708
+}
+StopPanel {
+  translation 36 0.4 -4.2
+  rotation 0 1 0 1.57
+  name "stop panel(2)"
+}
+Solid {
+  translation 35 0.5 -8
+  children [
+    DEF Arch Group {
+      children [
+        Transform {
+          translation 0.5 0.5 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+              }
+              geometry Box {
+                size 1.2 0.1 0.1
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 1 0 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+              }
+              geometry Box {
+                size 0.1 1 0.1
+              }
+            }
+          ]
+        }
+        Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.1 1 0.1
+          }
+        }
+      ]
+    }
+  ]
+  name "Arch"
+  boundingObject USE Arch
+}
+Solid {
+  translation 20 0.45 0
+  rotation 1 0 0 1.57
+  children [
+    DEF Ramp Group {
+      children [
+        Transform {
+          translation 0 1 0.25
+          rotation 1 -2.56961e-09 9.5898e-09 -2.6179953071795863
+          children [
+            Shape {
+              appearance PBRAppearance {
+              }
+              geometry Box {
+                size 1 1 0.05
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 -1 0.25
+          rotation 1 0 0 -0.523595307179586
+          children [
+            Shape {
+              appearance PBRAppearance {
+              }
+              geometry Box {
+                size 1 1 0.05
+              }
+            }
+          ]
+        }
+        Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 1 1.15 0.05
+          }
+        }
+      ]
+    }
+  ]
+  name "Ramp"
+  boundingObject USE Ramp
+}
+Solid {
+  children [
+    Group {
+      children [
+        Solid {
+          translation -5.61 0.26 -6.5
+          children [
+            Shape {
+              appearance Appearance {
+              }
+              geometry Box {
+                size 0.2 0.5 0.3
+              }
+            }
+          ]
+        }
+        Solid {
+          translation -5.61 0.25 -8.49
+          children [
+            Shape {
+              appearance Appearance {
+              }
+              geometry Box {
+                size 0.2 0.5 0.3
+              }
+            }
+          ]
+          name "solid(1)"
+        }
+        Solid {
+          translation -5.58 0.03 -7.5
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0 0 1
+                }
+              }
+              geometry Plane {
+                size 0.5 0.5
+              }
+            }
+          ]
+          name "solid(2)"
+        }
+      ]
+    }
+  ]
+}
+RubberDuck {
+  translation 21.1237 0.15911900000000007 -0.0407392
+  rotation 0.0038079866926302953 0.9999865102775859 -0.0035324920671607773 1.5708405691014689
+  scale 2
+}
+Pioneer3at {
+  translation 18 0.2 3.5
+  rotation -0.001344064769479063 -0.9999979358938517 -0.0015237118926069986 1.57080175234003
+  controller "TDPS"
+  extensionSlot [
+    Solid {
+      translation 0 0.2 0.1
+      children [
+        DEF plane Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Box {
+            size 0.3 0.02 0.4
+          }
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 3.0402744610129534e-05
+            anchor 0 0 0.2
+          }
+          device [
+            RotationalMotor {
+              name "servo"
+              acceleration 50
+              controlPID 50 0 0
+              maxTorque 20
+            }
+            PositionSensor {
+              name "ps"
+            }
+          ]
+          endPoint Solid {
+            translation 0 0.020006080539677878 6.08147324471231e-07
+            rotation 1 0 0 3.0402751214318088e-05
+            children [
+              DEF plane Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 0 0 0.498039
+                  }
+                }
+                geometry Box {
+                  size 0.3 0.02 0.4
+                }
+              }
+            ]
+            boundingObject USE plane
+            physics Physics {
+              mass 0.5
+            }
+          }
+        }
+      ]
+      boundingObject USE plane
+      physics Physics {
+        mass 0.5
+      }
+    }
+    Camera {
+      translation 0 0.15 -0.38
+      rotation 1 0 0 -1.3
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.666667 1 0
+            metalnessMap ImageTexture {
+              filtering 9
+            }
+          }
+          geometry Box {
+            size 0.08 0.08 0.08
+          }
+        }
+      ]
+      recognitionColors [
+        0.666667 0 0
+      ]
+      fieldOfView 2
+      width 86
+      height 86
+      motionBlur 1
+    }
+    InertialUnit {
+      name "imu"
+    }
+    Lidar {
+      translation 0 0.22 -0.15
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.666667 0 0
+            }
+          }
+          geometry Cylinder {
+            height 0.1
+            radius 0.05
+          }
+        }
+      ]
+      fieldOfView 3.14159
+      numberOfLayers 1
+      maxRange 2
+    }
+  ]
+}
