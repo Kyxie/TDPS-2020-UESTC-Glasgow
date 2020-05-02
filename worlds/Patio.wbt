@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.7745285212648623 -0.6225278370078102 -0.11209220266210802 0.41346293259352535
-  position 15.174677966471695 5.448455201824634 13.894824019727814
+  orientation 0.6332490139247624 0.754108292015135 0.17411596789878983 5.650847103744629
+  position -36.08232950608589 6.681646080264379 21.088826565746288
   follow "Pioneer 3-AT"
   followType "Mounted Shot"
 }
@@ -316,7 +316,7 @@ Cypress {
   translation 21.93 0 -7.54
 }
 CurvedRoadSegment {
-  translation -30 0.01 10.5
+  translation -30 0.01 10.51
   rotation 0 1 0 1.5708
   width 0.75
   lines [
@@ -807,13 +807,21 @@ Solid {
   ]
 }
 RubberDuck {
-  translation 21.1237 0.15911900000000007 -0.0407392
-  rotation 0.0038079866926302953 0.9999865102775859 -0.0035324920671607773 1.5708405691014689
+  translation -31.6 0.45 11.5
+  rotation -0.003711237711170205 0.9999862283430427 0.003710773356991348 1.5708454037985857
   scale 2
 }
 Pioneer3at {
-  translation 18 0.2 3.5
-  rotation -0.001344064769479063 -0.9999979358938517 -0.0015237118926069986 1.57080175234003
+  hidden position_0_0 168.84481014787642
+  hidden position_0_1 169.2480079542044
+  hidden position_0_2 168.844778461597
+  hidden position_0_3 169.24797622509746
+  hidden rotation_6 -1 0 0 5.481992161207168
+  hidden rotation_7 -1 0 0 5.885189967535162
+  hidden rotation_8 -1 0 0 5.481960474927754
+  hidden rotation_9 -1 0 0 5.885158238428212
+  translation -31.5 0.2 11.5
+  rotation 0.0009685060984241767 -0.9999990614729143 0.0009690455240070218 1.5707972519711686
   controller "TDPS"
   extensionSlot [
     Solid {
@@ -831,7 +839,7 @@ Pioneer3at {
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position 3.0402744610129534e-05
+            position 2.9812833982227832e-05
             anchor 0 0 0.2
           }
           device [
@@ -846,8 +854,8 @@ Pioneer3at {
             }
           ]
           endPoint Solid {
-            translation 0 0.020006080539677878 6.08147324471231e-07
-            rotation 1 0 0 3.0402751214318088e-05
+            translation 0 0.020005962557907542 5.963455599888867e-07
+            rotation 1 0 0 2.9812840751610562e-05
             children [
               DEF plane Shape {
                 appearance Appearance {

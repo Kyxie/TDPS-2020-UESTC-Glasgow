@@ -7,6 +7,12 @@
   using namespace std;
   
   #define pi 3.1415926
+  #define WHITE 0
+  #define RED 1
+  #define YELLOW 2
+  #define BLUE 3
+  #define width 86
+  #define height 86
   #define mat vector<vector<vector<unsigned char>>>
   
   // Speed of wheels
@@ -39,12 +45,71 @@
       int lidar_num = 0;
       // Range of lidar = 2m
       float lidar_max_range = 2.;
+      // Number of pixels of a picture
+      short width = 86;
+      short height = 86;
       
       ~Funcs()
       {
         delete lidar_dcrx;
         delete lidar_dcry;
         delete lidar_effective;
+      }
+      
+      // Color judge
+      
+      // Gaussian Filter
+      mat gaussian(mat imag)
+      {
+        mat temp = imag_size(width, height);
+        
+      }
+      
+      // Image Processing
+      Obj_center imag_process(const unsigned char *imag)
+      {
+        Obj_center temp;
+        mat imag_ = imag_copy(imag);
+      }
+      
+      // Transfer image from "const unsigned char *" to "mat"
+      mat imag_copy(const unsigned char *imag)
+      {
+        mat temp = imag_size(width, height);
+        int pixel = width * height;
+        const unsigned char *imag_ = imag;
+        // Row
+        int temp_r = 0;
+        // Column
+        int temp_c = 0;
+        for(int i = 0; i < pixel; i++, imag_ += 4)
+        {
+          temp_c = i % width;
+          temp_r = (int) i / height;
+          // The image is coded as a 3-bytes sequence
+          // representing red, green and blue levels of a pixel
+          // Red
+          temp[temp_r][temp_c][0] = imag_[0];
+          // Green
+          temp[temp_r][temp_c][1] = imag_[1];
+          // Blue
+          temp[temp_r][temp_c][2] = imag_[2];
+        }
+        return temp;
+      }
+      
+      // Size of image, initialize the mat
+      mat imag_size(short wid, short hei)
+      {
+        mat temp;
+        temp.resize(hei);
+        for(int i = 0; i < hei; i++)
+        {
+          temp[i].resize(wid);
+          for(int j = 0; j < wid; j++)
+            temp[i][j].resize(3);
+        }
+        return temp;
       }
       
       // Init lidar in Funcs

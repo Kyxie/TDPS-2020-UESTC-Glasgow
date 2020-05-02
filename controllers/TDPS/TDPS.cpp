@@ -4,9 +4,11 @@
 // Author:        Kunyang Xie
 // GitHub:        abnormal0
 
-// Initial Car Coordinate = [-49 0.2 11.5]
-// Initial Duck Coordinate = [-49.1 0.45 11.5]
-// Middle Car Coorrdinate = [18 0.2 3.5]
+// Initial car coordinate = [-49 0.2 11.5]
+// Initial duck coordinate = [-49.1 0.45 11.5]
+// Corner car coordinate = [-31.5 0.2 11.5]
+// Corner duck coordinate = [-31.6 0.45 11.5]
+// Bridge car coorrdinate = [18 0.2 3.5]
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -26,7 +28,7 @@ Funcs funcs;
 // Data variables
 const float *lidar_val = NULL;
 const double *imu_val = NULL;
-const unsigned char *img_val = NULL;
+const unsigned char *imag_val = NULL;
 // Define the height and width of the camera
 int camera_w = 0;
 int camera_h = 0;
@@ -77,7 +79,7 @@ int main(int argc, char **argv)
   wb_robot_cleanup();
   delete lidar_val;
   delete imu_val;
-  delete img_val;
+  delete imag_val;
   return 0;
 }
 
@@ -114,7 +116,7 @@ void mainloop(void)
   // Get data
   lidar_val = wb_lidar_get_range_image(lidar);
   imu_val = wb_inertial_unit_get_roll_pitch_yaw(imu);
-  img_val = wb_camera_get_image(camera);
+  imag_val = wb_camera_get_image(camera);
   // Get distance
   funcs.distance_get(lidar_val, pi, 0.15, 0);
   // Set speed
@@ -129,8 +131,10 @@ void mainloop(void)
   // float real_angle = acos(obstacle.obj_x / real_distance) - pi/2;
   
   // Main logic
-  // Before the first stop sign
-  if(bridge_seq[0] == 0)
+  // Start
+  cout << imag_val[0] <<endl;
+  /*// Before the first stop sign
+  else if(bridge_seq[0] == 0)
   {
     Mobile.dir = -pi/2;
     if(real_distance < 1.3)
@@ -187,7 +191,7 @@ void mainloop(void)
       Mobile.dir = 0;
       bridge_seq[4] = 1;
     }
-  }
+  }*/
 }
 
 void set_speed(Speed spe)
