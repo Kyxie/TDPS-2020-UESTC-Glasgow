@@ -57,6 +57,46 @@
       }
       
       // Color judge
+      bool color_judge(vector<unsigned char> col, short id)
+      {
+        short major = 190,min_ = 90;
+        // 255 255 255
+        if (id == WHITE)
+        {
+            if (col[0] > major && col[1] > major && col[2] > major)
+              return true;
+            else
+              return false;
+        }
+        
+        // 255 0 0 
+        else if (id == RED)
+        {
+            if (col[0] > major && col[1]<  min_ && col[2] < min_)
+              return true;
+            else
+              return false;
+        }
+        
+        // 255 255 0
+        else if (id == YELLOW)
+        {
+            if (col[0] >  major && col[1]>  major && col[2] < min_)
+              return true;
+            else
+              return false;
+        }
+        
+        // 0 0 255
+        else if (id == BLUE)
+        {
+            if (col[0] < min_ && col[1]< min_ && col[2] >  major)
+              return true;
+            else
+              return false;
+        }
+        return false;
+      }
       
       // Gaussian Filter
       mat gaussian(mat imag)
