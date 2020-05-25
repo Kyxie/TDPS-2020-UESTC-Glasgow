@@ -35,7 +35,7 @@ int camera_h = 0;
 // Number of lidar beams
 int lidar_width = 0;
 // State machines
-unsigned short duck_seq[5] = {0};
+unsigned short cast_seq[5] = {0};
 unsigned short bridge_seq[5] = {0};
 // The ith stop sign has been taken
 // The tree can be regarded as a stop sign
@@ -127,12 +127,14 @@ void mainloop(void)
   set_speed(temp);
   // Get obstacle information
   Obj_center obstacle = funcs.obj_dis_info();
-  float real_distance = sqrt(obstacle.obj_x * obstacle.obj_x + obstacle.obj_y * obstacle.obj_y);
-  // float real_angle = acos(obstacle.obj_x / real_distance) - pi/2;
-  
+  Obj_center lin_imag = funcs.imag_process(imag_val);
+  float real_distance = sqrt(lin_imag.obj_x * lin_imag.obj_x + lin_imag.obj_y * lin_imag.obj_y);
+  float real_angle = acos(lin_imag.obj_x / real_distance) - pi/2;
+  //float real_angle = 5 * angle_temp;
+  Mobile.dir = imu_val[2] + real_angle;
+  cout << real_distance << endl;
   // Main logic
   // Start
-  cout << imag_val[0] <<endl;
   /*// Before the first stop sign
   else if(bridge_seq[0] == 0)
   {

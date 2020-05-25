@@ -34,7 +34,13 @@
       // History error for PD control
       float err_yaw_last = 0.;
       float MAX_SPEED = 5.;
-      
+      float gaus[3][3] = 
+      {
+        {0.0751,0.1238,0.0751},
+        {0.1238,0.2042,0.1238},
+        {0.0751,0.1238,0.0751},
+      };
+                
     public:
       // Cartesian coordinate
       float *lidar_dcrx = NULL;
@@ -46,8 +52,13 @@
       // Range of lidar = 2m
       float lidar_max_range = 2.;
       // Number of pixels of a picture
-      short width = 86;
-      short height = 86;
+      mat imag_temp;
+      short color_trace = RED;
+      int count = 0;
+      int c_r = 0;
+      int c_y = 0;
+      int c_b = 0;
+      bool nothing_get = 0;
       
       ~Funcs()
       {
@@ -101,15 +112,75 @@
       // Gaussian Filter
       mat gaussian(mat imag)
       {
-        mat temp = imag_size(width, height);
-        
+        mat temp = imag_size(width,height);
+        for (short r = 1; r < width-1; r += 1)
+        {
+          for (short c = 1; c < height-1; c += 1)
+          {
+            for (short p = 0; p < 3; p += 1)
+            {
+              float add= 0;
+              for (short i = 0; i < 3; i += 1)
+              {
+                for (short j = 0; j < 3; j += 1)
+                  add += (float)imag[r-1 +i][c-1 + j][p] * gaus[i][j];
+              }
+                temp[r][c][p] = (unsigned char) add;
+             }
+           }
+        }
+        return temp;
       }
       
       // Image Processing
       Obj_center imag_process(const unsigned char *imag)
       {
-        Obj_center temp;
-        mat imag_ = imag_copy(imag);
+        Obj_center temp_out;
+        imag_temp = imag_copy(imag);
+        mat temp = gaussian(imag_temp);
+        int r_add = 0;
+        int c_add = 0;
+        count = 0;
+        c_r = 0;
+        c_y = 0;
+        c_b = 0;
+        for(short r = 1; r < width-1; r++)
+        {
+          for(short c = 1; c < height-1; c++)
+          {
+            if(color_judge(temp[r][c],WHITE) or color_judge(temp[r][c],color_trace))
+            {
+              r_add += r;
+              c_add += c;
+              count += 1;
+            }
+            if(color_judge(temp[r][c],RED))
+              c_r += 1;
+            else if(color_judge(temp[r][c],YELLOW))
+              c_y += 1;
+            else if(color_judge(temp[r][c],BLUE))
+              c_b += 1;
+          }
+        }
+        float y = 0;
+        float x = 0;
+        if(count == 0)
+        {
+          nothing_get = 1;
+          count = 1;
+          x = 0;
+          y = 0.5*height;
+        }
+        else
+        {
+          nothing_get = 0;
+          y = height - r_add/count;
+          x = c_add / count - 0.5*width;
+        }
+        temp_out.obj_x = x;
+        temp_out.obj_y = y;
+        // (x,y) are direction points
+        return temp_out;
       }
       
       // Transfer image from "const unsigned char *" to "mat"
