@@ -1,6 +1,6 @@
 #include <webots/motor.h>
 #include <webots/robot.h>
-
+#include <webots/position_sensor.h>
 #include <math.h>
 #include <stdio.h>
 
