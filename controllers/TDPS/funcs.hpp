@@ -67,13 +67,14 @@
       }
       
       // Color judge
-      bool color_judge(vector<unsigned char> col, short id)
+      bool color_judge(vector<unsigned char> color, short id)
       {
-        short major = 190,min_ = 90;
+        short max = 190;
+        short min = 90;
         // 255 255 255
         if (id == WHITE)
         {
-            if (col[0] > major && col[1] > major && col[2] > major)
+            if (color[0] > max && color[1] > max && color[2] > max)
               return true;
             else
               return false;
@@ -82,7 +83,7 @@
         // 255 0 0 
         else if (id == RED)
         {
-            if (col[0] > major && col[1]<  min_ && col[2] < min_)
+            if (color[0] > max && color[1] <  min && color[2] < min)
               return true;
             else
               return false;
@@ -91,7 +92,7 @@
         // 255 255 0
         else if (id == YELLOW)
         {
-            if (col[0] >  major && col[1]>  major && col[2] < min_)
+            if (color[0] >  max && color[1] >  max && color[2] < min)
               return true;
             else
               return false;
@@ -100,7 +101,7 @@
         // 0 0 255
         else if (id == BLUE)
         {
-            if (col[0] < min_ && col[1]< min_ && col[2] >  major)
+            if (color[0] < min && color[1] < min && color[2] >  max)
               return true;
             else
               return false;
@@ -153,6 +154,7 @@
               c_add += c;
               count += 1;
             }
+            
             if(color_judge(temp[r][c],RED))
               c_r += 1;
             else if(color_judge(temp[r][c],YELLOW))
@@ -197,11 +199,11 @@
           // The image is coded as a 3-bytes sequence
           // representing red, green and blue levels of a pixel
           // Red
-          temp[temp_r][temp_c][0] = imag_[0];
+          temp[temp_r][temp_c][0] = imag_[2];
           // Green
           temp[temp_r][temp_c][1] = imag_[1];
           // Blue
-          temp[temp_r][temp_c][2] = imag_[2];
+          temp[temp_r][temp_c][2] = imag_[0];
         }
         return temp;
       }

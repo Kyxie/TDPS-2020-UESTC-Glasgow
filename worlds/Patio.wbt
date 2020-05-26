@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.6509231174582644 0.7466441247616156 0.137192004567962 5.623392708654965
-  position -5.109522385926857 3.803494576857787 10.335247252075455
+  orientation -0.615644438950344 -0.7837553132374183 -0.08191174373453682 0.4837704615275077
+  position -51.36110525180967 3.6344326063225334 21.329789831863295
   follow "Pioneer 3-AT"
   followType "Mounted Shot"
 }
@@ -316,7 +316,7 @@ Cypress {
   translation 21.93 0 -7.54
 }
 CurvedRoadSegment {
-  translation -30 0.01 10.5
+  translation -30 0.01 10.52
   rotation 0 1 0 1.5708
   width 0.75
   lines [
@@ -349,7 +349,7 @@ CurvedRoadSegment {
   totalAngle 3.1415
 }
 CurvedRoadSegment {
-  translation -12 0.01 6.5
+  translation -12 0.01 6.53
   rotation 0 1 0 1.5708
   name "road(5)"
   width 0.75
@@ -807,8 +807,8 @@ Solid {
   ]
 }
 Pioneer3at {
-  translation -1.872 0.107594 3.55244
-  rotation 0.0003764088053678003 0.9999998573384842 0.00037899791899186276 -1.5715336284799786
+  translation -49 0.1 11.5
+  rotation 0.0007433483335751634 0.9999994487465221 0.00074157933278133 -1.574435307179586
   controller "TDPS"
   extensionSlot [
     Camera {
@@ -859,7 +859,7 @@ Pioneer3at {
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position -1.3995793599063681e-05
+            position 5.264199023895667e-11
             axis 0 0 1
             anchor 0 0 0.077
           }
@@ -877,7 +877,7 @@ Pioneer3at {
           ]
           endPoint Solid {
             translation 0 0 0.077
-            rotation 0 0 -1 1.3995800134152523e-05
+            rotation 0 0 1 0
             children [
               Group {
                 children [
@@ -943,7 +943,7 @@ Pioneer3at {
               }
               HingeJoint {
                 jointParameters HingeJointParameters {
-                  position 1.569990609575087
+                  position 1.5700000676450012
                   axis 0 -1 0
                   anchor 0.033 0 0.07
                 }
@@ -961,7 +961,7 @@ Pioneer3at {
                 ]
                 endPoint Solid {
                   translation 0.033 0 0.07
-                  rotation 0 -1 0 1.569990609575087
+                  rotation 0 -1 0 1.570000067645001
                   children [
                     Group {
                       children [
@@ -1014,7 +1014,7 @@ Pioneer3at {
                     }
                     HingeJoint {
                       jointParameters HingeJointParameters {
-                        position -2.6349917749763905
+                        position -2.6350000157991054
                         axis 0 -1 0
                         anchor 0 0 0.155
                       }
@@ -1032,7 +1032,7 @@ Pioneer3at {
                       ]
                       endPoint Solid {
                         translation 0 0 0.155
-                        rotation 0 1 0 2.6349917749763905
+                        rotation 0 0.9999999999999999 0 2.6350000157991054
                         children [
                           Group {
                             children [
@@ -1112,7 +1112,7 @@ Pioneer3at {
                           }
                           HingeJoint {
                             jointParameters HingeJointParameters {
-                              position 1.7799917413002706
+                              position 1.780000035427029
                               axis 0 -1 0
                               anchor 0 0 0.135
                             }
@@ -1130,7 +1130,7 @@ Pioneer3at {
                             ]
                             endPoint Solid {
                               translation 0 0 0.135
-                              rotation 0 -1 0 1.7799917413002704
+                              rotation 0 -1 0 1.780000035427029
                               children [
                                 Group {
                                   children [
@@ -1183,7 +1183,7 @@ Pioneer3at {
                                 }
                                 HingeJoint {
                                   jointParameters HingeJointParameters {
-                                    position -5.398210190277196e-06
+                                    position 1.9546592577014102e-12
                                     axis 0 0 1
                                     anchor 0 0 0.081
                                   }
@@ -1201,7 +1201,7 @@ Pioneer3at {
                                   ]
                                   endPoint Solid {
                                     translation 0 0 0.081
-                                    rotation 0 0 -1 5.3981705949292766e-06
+                                    rotation 0 0 1 0
                                     children [
                                       Shape {
                                         appearance PBRAppearance {
@@ -1223,7 +1223,7 @@ Pioneer3at {
                                       }
                                       SliderJoint {
                                         jointParameters JointParameters {
-                                          position 7.349678228162873e-05
+                                          position 7.351452677721873e-05
                                           axis 0 1 0
                                         }
                                         device [
@@ -1237,7 +1237,7 @@ Pioneer3at {
                                           }
                                         ]
                                         endPoint Solid {
-                                          translation 0 7.349678228162873e-05 0.09
+                                          translation 0 7.351452677721873e-05 0.09
                                           rotation 1 0 0 4.71239
                                           children [
                                             Shape {
@@ -1295,7 +1295,7 @@ Pioneer3at {
                                       }
                                       SliderJoint {
                                         jointParameters JointParameters {
-                                          position 4.7745637214767386e-05
+                                          position 4.776216123824742e-05
                                           axis 0 -1 0
                                         }
                                         device [
@@ -1310,7 +1310,7 @@ Pioneer3at {
                                           }
                                         ]
                                         endPoint Solid {
-                                          translation 0 -4.7745637214767386e-05 0.09
+                                          translation 0 -4.776216123824742e-05 0.09
                                           rotation 0 -0.7071067811865476 0.7071067811865476 3.14159
                                           children [
                                             Shape {
@@ -1510,8 +1510,8 @@ Pioneer3at {
   ]
 }
 DEF food Solid {
-  translation -49.118529271609084 0.012499607660778856 11.546550413294865
-  rotation 8.111628237444733e-15 1 -1.88781253134667e-14 0.02371152299075876
+  translation -48.9373 0.64 11.5065
+  rotation -2.0203098416233794e-15 0.9999999999999999 6.288044343740234e-15 0.023711522990758765
   children [
     DEF food Shape {
       appearance PBRAppearance {

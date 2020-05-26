@@ -4,10 +4,11 @@
 // Author:        Kunyang Xie
 // GitHub:        abnormal0
 
-// Initial car coordinate = [-49 0.2 11.5]
-// Corner car coordinate = [-31.5 0.2 11.5]
-// Bridge car coorrdinate = [18 0.2 3.5]
-// Initial food coordinate = [-49.1 0.45 11.5]
+// Initial car coordinate = [-49 0.1 11.5]
+// Corner car coordinate = [-31.5 0.1 11.5]
+// Bridge car coordinate = [18 0.1 3.5]
+// Cast car coordinate = [-1.7 0.1 3.5]
+// Initial food coordinate = [-48.9373 0.64 11.5065]
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -45,7 +46,7 @@ int lidar_width = 0;
 // State machines
 unsigned short cast_seq[5] = {0};
 unsigned short bridge_seq[7] = {0};
-unsigned short color_seq[1] = {0};
+unsigned short color_seq[2] = {0};
 // The ith stop sign has been taken
 // The tree can be regarded as a stop sign
 bool taken[3] = {0};
@@ -307,26 +308,29 @@ void mainloop(void)
   // Before color
   else if(color_seq[0] == 0)
   {
-    if(obstacle.obj_x < 0.05 && abs(imu_val[2] - west) < 0.05 && obstacle.obj_y < 0.72)
+    if(real_distance < 0.5 && imu_val[2] == west)
+      color_seq[0] = 0;
+    
+  }
+  else if(color_seq[1] == 0)
+  {
+    Mobile.speed = 5;
+    if(funcs.c_r > funcs.c_y and funcs.c_r > funcs.c_b)
     {
-      Mobile.speed = 5;
-      if(funcs.c_r > funcs.c_y and funcs.c_r > funcs.c_b)
-      {
-        funcs.color_trace = RED;
-        cout << "red" <<endl;
-      }
-      else if(funcs.c_b > funcs.c_y and funcs.c_b > funcs.c_r)
-      {
-        funcs.color_trace = BLUE;
-        cout << "blue" <<endl;
-      }
-      else
-      {
-        funcs.color_trace = YELLOW;
-        cout << "yellow" <<endl;
-      }
-      color_seq[0] = 1;
+      funcs.color_trace = RED;
+      cout << "red" <<endl;
     }
+    else if(funcs.c_b > funcs.c_y and funcs.c_b > funcs.c_r)
+    {
+      funcs.color_trace = BLUE;
+      cout << "blue" <<endl;
+    }
+    else
+    {
+      funcs.color_trace = YELLOW;
+      cout << "yellow" <<endl;
+    }
+    color_seq[1] = 1;
   }
 }
 
