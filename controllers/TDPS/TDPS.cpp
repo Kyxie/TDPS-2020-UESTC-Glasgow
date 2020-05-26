@@ -170,6 +170,7 @@ void mainloop(void)
   float line_dir = sqrt(lin_imag.obj_x * lin_imag.obj_x + lin_imag.obj_y * lin_imag.obj_y);
   float line_angle = acos(lin_imag.obj_x / line_dir) - pi/2;
   Mobile.dir = imu_val[2] + line_angle;
+  gripper_grip();
   // Main logic
   // Start
   if(cast_seq[0] == 0)
@@ -308,9 +309,8 @@ void mainloop(void)
   // Before color
   else if(color_seq[0] == 0)
   {
-    if(real_distance < 0.5 && imu_val[2] == west)
-      color_seq[0] = 0;
-    
+    if(real_distance < 1 && abs(imu_val[2] - west) < 0.05)
+      color_seq[0] = 1;
   }
   else if(color_seq[1] == 0)
   {
