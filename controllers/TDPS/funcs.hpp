@@ -58,7 +58,6 @@
       int c_r = 0;
       int c_y = 0;
       int c_b = 0;
-      bool nothing_get = 0;
       
       ~Funcs()
       {
@@ -166,14 +165,12 @@
         float x = 0;
         if(count == 0)
         {
-          nothing_get = 1;
           count = 1;
           x = 0;
           y = 0.5*height;
         }
         else
         {
-          nothing_get = 0;
           y = height - r_add/count;
           x = c_add / count - 0.5*width;
         }

@@ -24,6 +24,11 @@
 #include <funcs.hpp>
 using namespace std;
 
+#define north 0
+#define south -pi
+#define east -pi/2
+#define west pi/2
+
 // Work Frequency
 // float TIME_STEP = 10.;
 // Class declaration
@@ -40,6 +45,7 @@ int lidar_width = 0;
 // State machines
 unsigned short cast_seq[5] = {0};
 unsigned short bridge_seq[7] = {0};
+unsigned short color_seq[1] = {0};
 // The ith stop sign has been taken
 // The tree can be regarded as a stop sign
 bool taken[3] = {0};
@@ -174,7 +180,7 @@ void mainloop(void)
   }
   else if(cast_seq[1] == 0)
   {
-    Mobile.dir = -pi;
+    Mobile.dir = south;
     if(fabs(imu_val[2] + pi < 0.2))
       Mobile.speed = 25*(obstacle.obj_y - 0.32);
     if(fabs(obstacle.obj_y - 0.32) < 0.03)
@@ -182,7 +188,7 @@ void mainloop(void)
   }
   else if(cast_seq[2] == 0)
   {
-    Mobile.dir = 0;
+    Mobile.dir = north;
     Mobile.speed = 0;
     if(fabs(imu_val[2] < 0.1))
     {
@@ -212,7 +218,7 @@ void mainloop(void)
   }
   else if(cast_seq[3] == 0)
   {
-    Mobile.dir = -pi/2 + pi/8;
+    Mobile.dir = east + pi/8;
     Mobile.speed = 6.3;
     if (funcs.count > 500)
       cast_seq[3] = 1;
@@ -222,17 +228,17 @@ void mainloop(void)
     Mobile.dir = imu_val[2] + line_angle;
     if(funcs.count < 40)
     {
-      Mobile.dir = -pi/2;
+      Mobile.dir = east;
       cast_seq[4] = 1;
     }
   }
   // Before the first stop sign
   else if(bridge_seq[0] == 0)
   {
-    Mobile.dir = -pi/2;
+    Mobile.dir = east;
     if(real_distance < 1.3)
     {
-      Mobile.dir = 0;
+      Mobile.dir = north;
       // When the aim direction is setting to 0, seq0 is over
       bridge_seq[0] = 1;
     }
@@ -241,7 +247,7 @@ void mainloop(void)
   else if(bridge_seq[1] == 0)
   {
     // Keep straight
-    Mobile.dir = 0;
+    Mobile.dir = north;
     // Slow down
     Mobile.speed = 3;
     if(abs(pi/6 - imu_val[0]) < 0.05)
@@ -250,25 +256,25 @@ void mainloop(void)
   // Down
   else if(bridge_seq[2] == 0)
   {
-    Mobile.dir = 0;
+    Mobile.dir = north;
     if(abs(pi/6 + imu_val[0]) < 0.05)
       bridge_seq[2] = 1;
   }
   // Finished downhill
   else if(bridge_seq[3] == 0)
   {
-    Mobile.dir = 0;
+    Mobile.dir = north;
     if(abs(imu_val[0]) < 0.05)
       bridge_seq[3] = 1;
   }
   // Before the tree
   else if(bridge_seq[4] == 0)
   {
-    Mobile.dir = 0;
+    Mobile.dir = north;
     Mobile.speed = 6.3;
     if(real_distance < 1)
     {
-      Mobile.dir = -pi/2;
+      Mobile.dir = east;
       // When after the bridge and
       // the direction is close to -pi/2, seq2 is over
       if(abs(-pi/2 - imu_val[2]) < 0.3)
@@ -278,10 +284,10 @@ void mainloop(void)
   // Before the second stop
   else if(bridge_seq[5] == 0)
   {
-    Mobile.dir = -pi/2;
+    Mobile.dir = east;
     if(real_distance < 1.5)
     {
-      Mobile.dir = 0;
+      Mobile.dir = north;
       if(abs(0 - imu_val[2]) < 0.2)
         bridge_seq[5] = 1;
     }
@@ -289,12 +295,38 @@ void mainloop(void)
   // Before the arch
   else if(bridge_seq[6] == 0)
   {
-    Mobile.dir = 0;
+    Mobile.dir = north + real_angle;
     Mobile.speed = 5;
-    cout << funcs.count << endl;
     // Have Detected the white line
     if(funcs.count > 100)
+    {
+      Mobile.speed = 6.3;
       bridge_seq[6] = 1;
+    }
+  }
+  // Before color
+  else if(color_seq[0] == 0)
+  {
+    if(obstacle.obj_x < 0.05 && abs(imu_val[2] - west) < 0.05 && obstacle.obj_y < 0.72)
+    {
+      Mobile.speed = 5;
+      if(funcs.c_r > funcs.c_y and funcs.c_r > funcs.c_b)
+      {
+        funcs.color_trace = RED;
+        cout << "red" <<endl;
+      }
+      else if(funcs.c_b > funcs.c_y and funcs.c_b > funcs.c_r)
+      {
+        funcs.color_trace = BLUE;
+        cout << "blue" <<endl;
+      }
+      else
+      {
+        funcs.color_trace = YELLOW;
+        cout << "yellow" <<endl;
+      }
+      color_seq[0] = 1;
+    }
   }
 }
 
