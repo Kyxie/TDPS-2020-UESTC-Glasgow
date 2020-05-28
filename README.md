@@ -12,6 +12,6 @@ The patio is built followed by instructions, which is similar to the scene of Qi
 7. There is a cross road have three different colors, red, blue and yellow, if we change the color of the color box on the road, the car will choose the corresponding line.
 8. The project ends when the car reach the red end line.
 ## Technical Details
-The following algorithm is involved in this project:
+The following algorithm is involved in this project:  
 2. Binarization algorithm and Gaussian filter for image processing.  
 3. PID control.
