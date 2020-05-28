@@ -175,6 +175,7 @@ void mainloop(void)
   // Start
   if(cast_seq[0] == 0)
   {
+    Mobile.speed = 6.3;
     if(obstacle.obj_y < funcs.lidar_max_range)
       Mobile.speed = 10*(obstacle.obj_y - 0.9);
     if(obstacle.obj_y - 0.9 < 0.05)
@@ -315,15 +316,15 @@ void mainloop(void)
   else if(color_seq[1] == 0)
   {
     Mobile.speed = 5;
-    if(funcs.c_r > funcs.c_y and funcs.c_r > funcs.c_b)
+    if(funcs.c_r > funcs.c_y and funcs.c_r > funcs.c_p)
     {
       funcs.color_trace = RED;
       cout << "red" <<endl;
     }
-    else if(funcs.c_b > funcs.c_y and funcs.c_b > funcs.c_r)
+    else if(funcs.c_p > funcs.c_y and funcs.c_p > funcs.c_r)
     {
-      funcs.color_trace = BLUE;
-      cout << "blue" <<endl;
+      funcs.color_trace = PURPLE;
+      cout << "purple" <<endl;
     }
     else
     {

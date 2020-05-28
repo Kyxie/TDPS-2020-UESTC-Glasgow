@@ -10,7 +10,7 @@
   #define WHITE 0
   #define RED 1
   #define YELLOW 2
-  #define BLUE 3
+  #define PURPLE 3
   #define width 86
   #define height 86
   #define mat vector<vector<vector<unsigned char>>>
@@ -57,7 +57,7 @@
       int count = 0;
       int c_r = 0;
       int c_y = 0;
-      int c_b = 0;
+      int c_p = 0;
       
       ~Funcs()
       {
@@ -99,9 +99,9 @@
         }
         
         // 0 0 255
-        else if (id == BLUE)
+        else if (id == PURPLE)
         {
-            if (color[0] < min && color[1] < min && color[2] >  max)
+            if (color[0] > max && color[1] < min && color[2] >  max)
               return true;
             else
               return false;
@@ -143,7 +143,7 @@
         count = 0;
         c_r = 0;
         c_y = 0;
-        c_b = 0;
+        c_p = 0;
         for(short r = 1; r < width-1; r++)
         {
           for(short c = 1; c < height-1; c++)
@@ -159,8 +159,8 @@
               c_r += 1;
             else if(color_judge(temp[r][c],YELLOW))
               c_y += 1;
-            else if(color_judge(temp[r][c],BLUE))
-              c_b += 1;
+            else if(color_judge(temp[r][c],PURPLE))
+              c_p += 1;
           }
         }
         float y = 0;

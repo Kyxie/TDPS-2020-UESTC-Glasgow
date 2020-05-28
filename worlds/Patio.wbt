@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.5259270306733658 -0.8282503964463744 -0.19339606819560787 0.5939614461238607
-  position -50.85772388798885 1.8503155283785688 15.461679430628683
+  orientation -0.5815603357660474 -0.7899760960349529 -0.19423013040477874 0.5518641757635961
+  position -54.42890667304312 6.006117199197705 21.844707458765605
   follow "Pioneer 3-AT"
   followType "Mounted Shot"
 }
@@ -191,7 +191,7 @@ StraightRoadSegment {
   roadBorderHeight 0
   startingRoadBorderWidth 0.2
   endingRoadBorderWidth 0.2
-  length 60
+  length 50
   bottomTexture [
     ""
   ]
@@ -279,7 +279,7 @@ StraightRoadSegment {
   width 0.75
   lines [
     RoadLine {
-      color 0 0 1
+      color 1 0 1
       type "continuous"
     }
   ]
@@ -298,7 +298,7 @@ StraightRoadSegment {
   width 0.75
   lines [
     RoadLine {
-      color 0 0 1
+      color 1 0 1
       type "continuous"
     }
   ]
@@ -371,7 +371,7 @@ CurvedRoadSegment {
   width 0.75
   lines [
     RoadLine {
-      color 0 0 1
+      color 1 0 1
       type "continuous"
     }
   ]
@@ -389,7 +389,7 @@ CurvedRoadSegment {
   width 0.75
   lines [
     RoadLine {
-      color 0 0 1
+      color 1 0 1
       type "continuous"
     }
   ]
@@ -407,7 +407,7 @@ CurvedRoadSegment {
   width 0.75
   lines [
     RoadLine {
-      color 0 0 1
+      color 1 0 1
       type "continuous"
     }
   ]
@@ -649,7 +649,7 @@ DEF Green Solid {
   children [
     Shape {
       appearance PBRAppearance {
-        baseColor 0.5 1 0.5
+        baseColor 0 1 0
       }
       geometry Plane {
         size 2 0.4
@@ -805,6 +805,15 @@ Solid {
       ]
     }
   ]
+  name "solid(3)"
+}
+Solid {
+  translation -41.0658 7.99361e-15 18.9843
+  children [
+    Group {
+    }
+  ]
+  name "solid(4)"
 }
 Pioneer3at {
   translation -49 0.1 11.5
