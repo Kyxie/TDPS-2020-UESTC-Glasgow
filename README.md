@@ -17,3 +17,5 @@ The patio is built followed by instructions, which is similar to the scene of Qi
 3. Open the file /words/Patio.wbt.
 4. Upload the controler (/controllers/TPDS/TDPS.cpp) for the rover and simulate.
 5. If you want to build on your own computer, change the line 52 in file Makefile (/controllers/TPDS/Makefile) to your own location and then compile the code.
+## Demo Video
+BiliBili: https://www.bilibili.com/video/BV1Rp4y1S7o3?from=search&seid=727746215518421105
